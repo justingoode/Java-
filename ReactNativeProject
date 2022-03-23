@@ -1,0 +1,78 @@
+import React, {Component} from 'react';
+import Header from './Header';
+import AlbumArt from './AlbumArt';
+import TrackDetails from './TrackDetails';
+import SeekBar from './Seekbar;
+import Controls form './Controls';
+import Player from './Player';
+import {
+  View,
+  Text,
+  } from 'react-native ' ',
+  export default class App
+  extends component {
+  render(0 {
+  return (
+  <View style = {SAtyles.contrainer} >
+  <Text style = { { color: 'white'}}>
+    Hello React Native!
+    </text>
+    </View>
+    );
+    }
+    }
+      const styles = {
+      container: {
+      flex: 1,
+      backgroudColor: 'rgb(4,4,4);
+      },
+      }
+      
+      class App extends Component {
+      
+      render () {
+      return (
+      <View style =
+      {styles.contrainer}>
+      <Header
+      message = "Playing from charts"
+      <>
+      <AlbumArt 
+      url = "     "
+      />
+      <TrackDetails
+      title ="    "
+      artist = "    "
+      />
+      SeekBar trck Length =
+      {204} currentPostioin = {156} />
+      <Controls/>
+      export const TRACKS = [
+      {
+      title: '   ',
+      artist: '    ',
+      abumArtURL: "     ",
+      audioURL: "       ",
+      },
+      }
+      title: ' ',
+      artist: '      ',
+      albumArtUrl: '      ',
+      audioUrl: '         ',
+      },
+      ];
+      export default class App
+      extends Component {
+      render () {
+      return < Player tracks = {TRACKS} <>
+      }
+      }
+      ,</View>
+      );
+      }
+      }
+      </view>
+      );
+      }
+      }
+ 
