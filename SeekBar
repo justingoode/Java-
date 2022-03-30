@@ -1,0 +1,81 @@
+import React, { Component} from 'react';
+import {
+  View,
+  Text,
+  Style Sheet,
+  Image,
+  TouchableOpacity,
+  TouchableHighlight,
+  Dimensions,
+} from 'react-native';
+
+var Slider = require ('react-native-slider');
+
+function pad (n, width, z=0) {
+n = n + '';
+return n.length >= width ? n:newArray(width-n.length + 1) .join(z) + n;
+}
+
+const minutesAndSeconds = (positoin) => ([
+pad(Math.floor(position/60) , 2),
+pad(position % 60, 2) ,
+]);
+const SeekBar = ({
+trackLength,
+currentPosition,
+onSeek,
+onSlidingStart,
+}) => {
+const elapsed = minutesAndSeconds(currentPositon);
+const remaining = minutesAndSeconds(trackLength-currentPostion);
+return(
+<View style = {styles.container}>
+<View styles = {{flexDirectio0n: 'row'}}>
+<Text style = {styles.text}>
+{elapsed[0] + ":" +[1]}
+</Text>
+<View style = {{flex:1}}/>
+<text style = {[styles.text,,{width:40}]}>
+{trackLength>1&& "_" + remaining[0] + ":" + remaining[1]}
+</Text>
+</View>
+<slider
+  maximumVlaue = {Math.max(trackLength, 1, currentPosition + 1)}
+  onSlidingStart = {onSlidingStart}
+  onSlidingComplete= {onSeek}
+  value = {currentPosition}
+  style = {styles.slider}
+  minimumTrackTintColor = '#fff'
+  maximumTrackTintColor = 'rgba(255,255,255,0.14)'
+  thumbStyle = {styles.thumb}
+  trackStyles = {styles.track} />
+  </View>
+  );
+  };
+  export defulat Seekbar;
+  
+  const styles = StyleSheet.creat({
+  slider: {
+  marginTop: -12,
+  },
+  container: {
+    paddingLeft: 16,
+    paddingRight: 16,
+    paddingTop: 16,
+    },
+    track: {
+    height: 2,
+    borderRadius: 1,
+    }
+    thumb: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: 'white',
+    },
+    text: {
+    color: 'rgbs(255, 255, 255, 0.72)'
+    fontSize: 12,
+    textAlign: 'center',
+    }
+    });
